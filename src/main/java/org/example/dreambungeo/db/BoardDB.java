@@ -11,8 +11,8 @@ public class BoardDB {
         Integer remain = calculationResult.getRemain();
 
         // 데이터 저장
-        db.save(new DB.DataEntity("minus", minus));
-        db.save(new DB.DataEntity("remain", remain));
+        db.save(new DB.DataEntity(minus));
+        db.save(new DB.DataEntity(remain));
 
 
 

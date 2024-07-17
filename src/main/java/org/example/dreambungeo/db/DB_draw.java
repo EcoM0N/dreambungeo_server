@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-public class DB {
+public class DB_draw {
 
     private static List<DataEntity> dataStore = new ArrayList<>();
 
@@ -14,21 +14,14 @@ public class DB {
     }
 
     // 데이터 조회 (ID로)
-    public Optional<DataEntity> findById(String id) {
+    public Optional<DataEntity> findById(int id) {
+        String ID = String.valueOf(id);
         return dataStore.stream()
-                .filter(data -> data.getId() == id)
+                .filter(data -> data.getId() == ID)
                 .findFirst();
     }
 
-    // 데이터 수정
-    public void update(String id, int value) {
-        findById(id).ifPresent(data -> data.setValue(value));
-    }
 
-    // 데이터 삭제
-    public void delete(String id) {
-        dataStore.removeIf(data -> data.getId() == id);
-    }
 
     // 모든 데이터 조회
     public List<DataEntity> findAll() {
@@ -38,11 +31,10 @@ public class DB {
     // 데이터 엔티티 클래스
     public static class DataEntity {
         private String id;
-        private int value;
 
-        public DataEntity(int id) {
-            this.id = String.valueOf(id);
-            this.value = id;
+        public DataEntity(String id) {
+            this.id = id;
+
         }
 
         public String getId() {
@@ -53,12 +45,5 @@ public class DB {
             this.id = String.valueOf(id);
         }
 
-        public int getValue() {
-            return value;
-        }
-
-        public void setValue(int value) {
-            this.value = value;
-        }
     }
 }
