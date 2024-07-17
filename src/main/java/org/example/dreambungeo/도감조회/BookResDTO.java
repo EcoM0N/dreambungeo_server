@@ -15,7 +15,7 @@ public class BookResDTO {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int eco_index; // 환경몬 번호
+    private int index; // 환경몬 번호
 
     @Column
     private String eco_img; // 환경몬 img (url)
@@ -30,7 +30,7 @@ public class BookResDTO {
     public static BookResDTO toDTO(BookEntity bookentity) {
         BookResDTO bookResdDTO = new BookResDTO();
 
-//        bookResdDTO.setEco_index(bookentity.getEco_index());
+        bookResdDTO.setIndex(bookentity.getIndex());
         bookResdDTO.setEco_img(bookResdDTO.getEco_img());
         bookResdDTO.setEco_name(bookResdDTO.getEco_name());
         bookResdDTO.setEco_content(bookResdDTO.getEco_content());
