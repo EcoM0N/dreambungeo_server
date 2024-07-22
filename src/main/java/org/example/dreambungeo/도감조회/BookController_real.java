@@ -5,9 +5,7 @@ import org.example.dreambungeo.db.Fish;
 import org.example.dreambungeo.db.FishDB;
 import org.example.dreambungeo.게시판.request.BookReqDTO;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -21,12 +19,12 @@ public class BookController_real {
     //CompletableFuture<ResponseEntity<BookEntity>>
 
     @GetMapping("/book")
-    public List findBookAll() {
+    public List<Fish> findBookAll() {
         return fishDB.getAllFish();
     }
 
-    @GetMapping("/book/{id}")
-    public Fish findById(BookReqDTO bookreqDTO) {
-        return fishDB.getFishByIndex(bookreqDTO.getEco_index());
+    @GetMapping("/book/{idx}")
+    public Fish findById(@PathVariable int idx) {
+        return fishDB.getFishByIndex(idx);
     }
 }

@@ -20,8 +20,10 @@ public class BoardController {
     public CalculationResult board(BoardReqDTO boardReqDTO) {
         CalculationResult result = boardService.calculation(boardReqDTO);
 
-        Integer minus = result.getMinus();
-        Integer remain = result.getRemain();
+//        Integer minus = result.getMinus();
+//        Integer remain = result.getRemain();
+        Integer minus = 30;
+        Integer remain = 70;
         return result;
     }
 

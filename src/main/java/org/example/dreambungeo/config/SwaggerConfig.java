@@ -12,7 +12,7 @@ public class SwaggerConfig {
     public OpenAPI openAPI() {
         Info info = new Info()
                 .version("v1.0.0")
-                .title("")
+                .title("붕어의 꿈")
                 .description("API Description");
 
         return new OpenAPI()

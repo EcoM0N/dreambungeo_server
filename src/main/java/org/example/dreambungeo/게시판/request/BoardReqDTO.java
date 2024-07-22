@@ -11,7 +11,6 @@ import lombok.Setter;
 @AllArgsConstructor
 public class BoardReqDTO {
 
-    private String email;
 
     private int shower;
 
